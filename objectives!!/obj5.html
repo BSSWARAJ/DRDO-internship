@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>obj_5</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+body {
+    
+        background-color: #f8f9fa;
+        margin: 40px; /* Add margin to the body to create space at the top and bottom */
+    }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1 auto;
+            color: black;
+            margin-top: 3px; /* Adjust this value to control the space at the top */
+        margin-bottom: 10px; /* Adjust this value to control the space at the bottom */
+        background-color: #ffffff;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: white;
+            width: 2%;
+        }
+
+        th:nth-child(8), td:nth-child(8) {
+            width: 25%;
+        }
+
+        th:nth-child(4), td:nth-child(4) {
+            background-color: white;
+            width: 15%;
+        }
+
+        th:nth-child(5), td:nth-child(5) {
+            background-color: white;
+        }
+
+        th:nth-child(2), td:nth-child(2) {
+            width: 15%;
+        }
+
+        td:nth-child(5) {
+            font-weight: bold;
+        }
+        td:nth-child(6) {
+            text-align: center;
+        }
+
+        td:nth-child(1) {
+            width: 2%;
+        }
+
+        td:nth-child(7) {
+            width: 25%;
+        }
+
+        td:nth-child(2) {
+            width: 15%;
+        }
+td:nth-child(3) {
+            width: 25%;
+        }
+        td:nth-child(7) input[type="text"] {
+            height: 30px;
+            width: 90%;
+            
+        }
+td:nth-child(4) input[type="text"] {
+            height: 30px;
+            width: 90%;
+}
+.button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+           text-align: center;
+        }
+
+        .button-container button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        
+        h2 {
+            
+            color: #007bff;
+            animation: colorChange 8s infinite;
+        }
+
+@keyframes colorChange {
+         0% {
+        color: #0f3152;
+        }
+        25% {
+        color: #da8954;
+        }
+        50% {
+        color: #c2e4c2;
+         }
+        75% {
+        color: #6da18c;
+        }
+        100% {
+        color: #7d53cc;
+    }
+}
+
+
+
+        .container-fluid {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .form-control {
+            background-color: #f5f5f5;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-group input:focus {
+            background-color: #e2e2e2; /* Change background color when focused */
+        }
+
+        /* Add a transition effect for smoother animation */
+        .form-group input {
+            transition: background-color 0.3s;
+        }
+
+        .btn {
+            margin-top: 20px;
+        }
+
+        .table th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .table td {
+            text-align: center;
+        }
+
+
+.form-group.animated {
+    animation: fadeInUP is ease-in-out;
+    margin-bottom: 20px;
+}        
+
+@keyframes fadeInUp{
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animated-input {
+            animation: fadeIn 2s;
+        }
+/* Change the design of the input box */
+        .custom-input {
+            background-color: #d5d4d6;
+            border: 1px solid #131212;
+            border-radius: 8px;
+            padding: 5px 10px;
+            width: 100%;
+        }
+ /* Apply styles to the input box with class "custom-input" */
+        .custom-input.input-group {
+            background-color: #0c0c0c;
+            border: 1px solid #999;
+        }
+
+
+ /* Add animation to the buttons */
+ .btn-animated {
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn-animated:hover {
+            transform: scale(1.05);
+            background-color: #0f6ed3;
+        }
+
+        /* Customize the "Save" and "Next" buttons */
+        #saveButton, #nextButton {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 25px; /* Rounded corners */
+        }
+
+        #saveButton {
+            background-color: rgb(25, 59, 25);
+            color: white;
+        }
+
+        #nextButton {
+            background-color: rgb(7, 57, 143);
+            color: white;
+        }
+        
+        #logOutButton {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }       
+
+
+    
+    
+    </style>
+</head>
+<body>
+    
+    
+    
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+        <button id="logOutButton" class="btn btn-danger ml-auto">Log Out</button>
+    </div>
+    </nav>
+    <div class="container-fluid">
+        
+        <h2 class="text-center"><u>KEY PERFORMANCE INDICES OF QUALITY CONTROL DIVISION</u></h2><br>
+        <form>
+            <div class="form-row justify-content-center">
+                
+            </div>
+        </form>
+    </div>
+
+    <h4><b>Objective No.5 : Release,Update and Control Of procedures ,Forms and Formats QC Related Activities </b> </h4>
+    <div class="table-responsive">
+    <table class="tabe table-boardered">
+        <thead>
+        <tr>
+            <th><center>Sl No</center></th>
+            <th><center>Key Performance Indices</center></th>
+            <th><center>Method of Measurement</center></th>
+            <th><center>Completed Tasks</center></th>
+            <th><center>Target (%)</center></th>
+            <th><center>Achievement (%)</center></th>
+            <th><center>Action to be Taken</center></th>
+            <th><center>Ref of Evidence</center></th>
+        </tr>
+        </thead>
+        <tr>
+            <td>1</td>
+            <td>Review / Update Of Procedures Related QC Activities </td>
+            <td>Number of procedures reviewed  vs number of procedures due for review * </td>
+            <td><input type="text" style="text-align:center;" oninput="updateAchievement(this)"></td>
+            <td><center>100%</center></td>
+            <td>NA</td>
+            <td><center><input type="text"></center></td>
+            <td rowspan="9"><center><input type="text" style="width: 85%; height: 100px" id="refOfEvidence"></center></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Review / Update of Forms and Formats Related QC Activites </td>
+            <td>Number of forms and formats reviewed vs Total number of forms and formats due for review* </td>
+            <td><input type="text" style="text-align:center;" oninput="updateAchievement(this)"></td>
+            <td><center>100%</center></td>
+            <td>NA</td>
+            <td><center><input type="text"></center></td>
+            <td rowspan="9"><center><input type="text" style="width: 85%; height: 100px" id="refOfEvidence"></center></td>
+        </tr>
+        
+        
+    </table>
+    
+    </div>
+    <div class="button-container text-center">
+        <button id="saveButton" class="btn-animated btn btn-success" >SAVE</button>
+        <button id="nextButton" class="btn-animated btn btn-success" >NEXT</button>
+    </div>
+</form>
+</div>
+
+
+
+
+
+
+
+  <br>
+
+    
+<script>
+    function updateAchievement(input) {
+        const targetCell = input.parentElement.nextElementSibling;
+        const achievementCell = targetCell.nextElementSibling;
+
+        const completedValue = input.value.trim();
+        if (completedValue.match(/^\d+\/\d+$/)) {
+            const [completed, total] = completedValue.split('/').map(Number);
+            const percentage = ((completed / total) * 100).toFixed(2);
+            targetCell.textContent = "100%";
+            achievementCell.textContent = percentage + "%";
+        } else if (completedValue === "") {
+            targetCell.textContent = "100%";
+            achievementCell.textContent = "NA";
+        } else {
+            targetCell.textContent = "100%";
+            achievementCell.textContent = "NA";
+        }
+    }
+
+    document.getElementById("saveButton").addEventListener("click", function() {
+        // Add your save logic here
+        alert("Data saved!");
+    });
+
+    document.getElementById("nextButton").addEventListener("click", function() {
+        // Add your next button logic here
+        alert("Go to next page");
+    });
+
+// script.js
+document.addEventListener("DOMContentLoaded", function() {
+    // Add any additional JavaScript logic here if needed.
+});
+
+
+
+
+
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
